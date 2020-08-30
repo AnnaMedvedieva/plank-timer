@@ -1,0 +1,3 @@
+package org.company.annamedvedieva.myplanktimer.mainscreen
+
+class MainScreenViewModel
