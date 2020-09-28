@@ -1,4 +1,4 @@
-package org.company.annamedvedieva.myplanktimer.mainscreen
+package org.company.annamedvedieva.myplanktimer.results
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -35,7 +35,7 @@ class MainScreenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_screen, container, false)
+        return inflater.inflate(R.layout.fragment_results, container, false)
     }
 
     companion object {

@@ -5,10 +5,12 @@
     <string name="startButton">START</string>
     <string name="pauseButton">PAUSE</string>
     <string name="stopButton">STOP</string>
-    <string name="low_plank">Low plank</string>
-    <string name="high_plank">High plank</string>
-    <string name="side_plank">Side plank</string>
     <string name="last_plank_duration">Last plank duration</string>
     <string name="last_plank_date">Last plank date:</string>
     <string name="let_s_start_the_training">Which type of the plank do you want to track?</string>
+    <string-array name="types_array">
+        <item>Low plank</item>
+        <item>High plank</item>
+        <item>Side plank</item>
+    </string-array>
 </resources>
