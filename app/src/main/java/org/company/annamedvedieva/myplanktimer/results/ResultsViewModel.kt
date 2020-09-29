@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import org.company.annamedvedieva.myplanktimer.data.PlankDao
 
-class ResultsViewModel(dao: PlankDao, application: Application): ViewModel() {
+class ResultsViewModel(dao: PlankDao): ViewModel() {
 
     private var _plankType = MutableLiveData<String?>()
 

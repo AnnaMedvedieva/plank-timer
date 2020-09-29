@@ -6,12 +6,11 @@ import androidx.lifecycle.ViewModelProvider
 import org.company.annamedvedieva.myplanktimer.data.PlankDao
 
 class ResultsViewModelFactory(
-    private val dao: PlankDao,
-    private val application: Application) : ViewModelProvider.Factory {
+    private val dao: PlankDao) : ViewModelProvider.Factory {
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ResultsViewModel::class.java)) {
-            return ResultsViewModel(dao, application) as T
+            return ResultsViewModel(dao) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
