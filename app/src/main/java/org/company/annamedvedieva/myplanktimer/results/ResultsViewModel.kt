@@ -10,7 +10,7 @@ class ResultsViewModel(dao: PlankDao): ViewModel() {
 
     private var _plankType = MutableLiveData<String?>()
 
-    val plank: LiveData<String?>
+    val plankType: LiveData<String?>
     get() = _plankType
 
     fun onPlankTypeClick(type: String){
