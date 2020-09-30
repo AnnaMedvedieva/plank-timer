@@ -19,56 +19,56 @@
             android:id="@+id/plankChronometer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="64dp"
             android:textSize="42sp"
-            app:layout_constraintBottom_toTopOf="@+id/pauseButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/plantTypeSpinner" />
+
+        <Button
+            android:id="@+id/pauseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="116dp"
+            android:text="@string/pauseButton"
+            app:layout_constraintEnd_toStartOf="@+id/stopButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/startButton"
+            app:layout_constraintTop_toBottomOf="@+id/plankChronometer" />
 
         <Button
             android:id="@+id/startButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginTop="116dp"
             android:text="@string/startButton"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/pauseButton"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/pauseButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:text="@string/pauseButton"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/stopButton"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/startButton" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/plankChronometer" />
 
         <Button
             android:id="@+id/stopButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="116dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="32dp"
             android:text="@string/stopButton"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/pauseButton" />
+            app:layout_constraintStart_toEndOf="@+id/pauseButton"
+            app:layout_constraintTop_toBottomOf="@+id/plankChronometer" />
 
         <ImageView
             android:id="@+id/plankTypeImage"
             android:layout_width="300dp"
             android:layout_height="100dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="64dp"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            android:src="@drawable/ic_banner_foreground" />
 
         <Spinner
             android:id="@+id/plantTypeSpinner"

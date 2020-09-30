@@ -8,6 +8,8 @@
     <string name="last_plank_duration">Last plank duration</string>
     <string name="last_plank_date">Last plank date:</string>
     <string name="let_s_start_the_training">Which type of the plank do you want to track?</string>
+    <string name="timer_menu">Timer</string>
+    <string name="results_menu">Results</string>
     <string-array name="types_array">
         <item>Low plank</item>
         <item>High plank</item>
