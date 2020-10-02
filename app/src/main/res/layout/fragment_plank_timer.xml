@@ -26,11 +26,12 @@
             app:layout_constraintTop_toBottomOf="@+id/plantTypeSpinner" />
 
         <Button
-            android:id="@+id/pauseButton"
+            android:id="@+id/resetButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="116dp"
-            android:text="@string/pauseButton"
+            android:text="@string/resetButton"
+            android:visibility="invisible"
             app:layout_constraintEnd_toStartOf="@+id/stopButton"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/startButton"
@@ -43,7 +44,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="116dp"
             android:text="@string/startButton"
-            app:layout_constraintEnd_toStartOf="@+id/pauseButton"
+            app:layout_constraintEnd_toStartOf="@+id/resetButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/plankChronometer" />
 
@@ -54,9 +55,10 @@
             android:layout_marginTop="116dp"
             android:layout_marginEnd="8dp"
             android:text="@string/stopButton"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/pauseButton"
+            app:layout_constraintStart_toEndOf="@+id/resetButton"
             app:layout_constraintTop_toBottomOf="@+id/plankChronometer" />
 
         <ImageView

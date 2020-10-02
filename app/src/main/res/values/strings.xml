@@ -3,8 +3,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="startButton">START</string>
-    <string name="pauseButton">PAUSE</string>
-    <string name="stopButton">STOP</string>
+    <string name="resetButton">RESET</string>
+    <string name="stopButton">DONE!</string>
     <string name="last_plank_duration">Last plank duration</string>
     <string name="last_plank_date">Last plank date:</string>
     <string name="let_s_start_the_training">Which type of the plank do you want to track?</string>
