@@ -9,7 +9,10 @@ import androidx.room.Query
 interface PlankDao {
 
     @Insert
-    fun insert(plank: Plank)
+    suspend fun insert(plank: Plank)
+
+    @Query("SELECT * from plank_time_table WHERE plankId = :id")
+    suspend fun get(id: Long): Plank
 
     @Query("SELECT * from plank_time_table WHERE plankId = :id")
     fun getPlank(id: Long): LiveData<Plank>
@@ -17,6 +20,7 @@ interface PlankDao {
     @Query("SELECT * from plank_time_table ORDER BY date DESC")
     fun getAllPlanks(): LiveData<List<Plank>>
 
-
+    @Query("DELETE FROM plank_time_table WHERE plankId = :id")
+    suspend fun deletePlankById(id: Long)
 
 }

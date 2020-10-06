@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingComponent
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.snackbar.Snackbar
 import org.company.annamedvedieva.myplanktimer.R
 import org.company.annamedvedieva.myplanktimer.data.PlankDatabase
 import org.company.annamedvedieva.myplanktimer.databinding.FragmentResultsBinding
@@ -31,6 +33,30 @@ class ResultsFragment : Fragment() {
         val resultsViewModel = ViewModelProvider(this, factory).get(ResultsViewModel::class.java)
 
         binding.resultsViewModel = resultsViewModel
+
+
+        val adapter = PlanksListAdapter(PlankListener {plankId ->
+            resultsViewModel.onDeleteClicked(plankId)
+        })
+
+        binding.plankList.adapter = adapter
+
+        resultsViewModel.planks.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                adapter.submitList(it)
+            }
+        })
+
+        resultsViewModel.snackBarDelete.observe(viewLifecycleOwner, Observer {
+            if(it == true){
+                Snackbar.make(requireActivity().findViewById(android.R.id.content),
+                getString(R.string.snackbar_delete),
+                Snackbar.LENGTH_SHORT).show()
+
+                resultsViewModel.doneShowingSnackbar()
+            }
+
+        })
 
         binding.setLifecycleOwner(this)
 
