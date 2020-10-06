@@ -15,13 +15,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp">
+        android:layout_height="90dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF">
 
         <TextView
             android:id="@+id/dateTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="36dp"
             android:text="@{plank.date}"
@@ -64,13 +66,13 @@
 
         <ImageButton
             android:id="@+id/deleteImageButton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="28dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/ic_banner_background"
-            android:tint="#D32F2F"
             android:onClick="@{() -> clickListener.onClick(plank)}"
+            android:tint="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_menu_delete" />

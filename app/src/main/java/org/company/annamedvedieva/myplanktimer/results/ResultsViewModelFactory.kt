@@ -1,6 +1,5 @@
 package org.company.annamedvedieva.myplanktimer.results
 
-import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import org.company.annamedvedieva.myplanktimer.data.PlankDao

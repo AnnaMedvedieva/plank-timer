@@ -1,11 +1,9 @@
 package org.company.annamedvedieva.myplanktimer.results
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.company.annamedvedieva.myplanktimer.data.Plank
 import org.company.annamedvedieva.myplanktimer.data.PlankDao

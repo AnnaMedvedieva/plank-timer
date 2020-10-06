@@ -68,7 +68,6 @@ class PlankTimerFragment : Fragment() {
     private fun convertMillis(millisTime: Long): String {
         val minutes = TimeUnit.MILLISECONDS.toMinutes(millisTime)
         val seconds = TimeUnit.MILLISECONDS.toSeconds(millisTime)
-       // val minutes = (millisTime/1000) / 60
         return "$minutes min $seconds s"
 
     }
