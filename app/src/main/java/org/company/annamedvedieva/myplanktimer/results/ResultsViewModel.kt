@@ -15,12 +15,21 @@ class ResultsViewModel(val dao: PlankDao): ViewModel() {
     val snackBarDelete: LiveData<Boolean?>
     get() = _snackBarDelete
 
+    private var _lastRemovedEntry = MutableLiveData<Plank?>()
+
     val planks: LiveData<List<Plank>> = dao.getAllPlanks()
 
     fun onDeleteClicked(plankId: Long) {
         viewModelScope.launch {
+            _lastRemovedEntry.value = getEntryToRemove(plankId)
             deleteEntry(plankId)
             _snackBarDelete.value = true
+        }
+    }
+
+    fun onUndoClicked(){
+        viewModelScope.launch {
+            addEntry(_lastRemovedEntry.value)
         }
     }
 
@@ -28,10 +37,16 @@ class ResultsViewModel(val dao: PlankDao): ViewModel() {
         dao.deletePlankById(plankId)
     }
 
+    private suspend fun getEntryToRemove(plankId: Long): Plank?{
+        return dao.get(plankId)
+    }
+
+    private suspend fun addEntry(plank: Plank?){
+        dao.insert(plank)
+    }
+
     fun doneShowingSnackbar(){
         _snackBarDelete.value = null
     }
-
-
 }
 

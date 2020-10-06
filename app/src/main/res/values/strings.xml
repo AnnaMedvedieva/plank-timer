@@ -11,6 +11,7 @@
     <string name="timer_menu">Timer</string>
     <string name="results_menu">Results</string>
     <string name="snackbar_delete">1 item removed</string>
+    <string name="Undo">UNDO</string>
     <array name="types_array">
         <item>Low plank</item>
         <item>High plank</item>

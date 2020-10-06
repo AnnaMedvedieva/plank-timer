@@ -23,7 +23,8 @@ class ResultsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding: FragmentResultsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_results, container, false)
+        val binding: FragmentResultsBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_results, container, false)
 
         val application = requireNotNull(this.activity).application
         val dao = PlankDatabase.getInstance(application).plankDao
@@ -35,7 +36,7 @@ class ResultsFragment : Fragment() {
         binding.resultsViewModel = resultsViewModel
 
 
-        val adapter = PlanksListAdapter(PlankListener {plankId ->
+        val adapter = PlanksListAdapter(PlankListener { plankId ->
             resultsViewModel.onDeleteClicked(plankId)
         })
 
@@ -48,10 +49,15 @@ class ResultsFragment : Fragment() {
         })
 
         resultsViewModel.snackBarDelete.observe(viewLifecycleOwner, Observer {
-            if(it == true){
-                Snackbar.make(requireActivity().findViewById(android.R.id.content),
-                getString(R.string.snackbar_delete),
-                Snackbar.LENGTH_SHORT).show()
+            if (it == true) {
+                Snackbar.make(
+                    requireActivity().findViewById(android.R.id.content),
+                    getString(R.string.snackbar_delete),
+                    Snackbar.LENGTH_LONG
+                ).setAction(getString(R.string.Undo), View.OnClickListener {
+                    resultsViewModel.onUndoClicked()
+                }).
+                show()
 
                 resultsViewModel.doneShowingSnackbar()
             }
@@ -62,6 +68,5 @@ class ResultsFragment : Fragment() {
 
         return binding.root
     }
-
 
 }
