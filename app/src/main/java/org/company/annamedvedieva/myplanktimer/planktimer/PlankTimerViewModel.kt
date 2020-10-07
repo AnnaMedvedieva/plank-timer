@@ -53,5 +53,4 @@ class PlankTimerViewModel(val dao: PlankDao): ViewModel() {
         }
     }
 
-
 }

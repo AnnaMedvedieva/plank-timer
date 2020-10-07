@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Chronometer
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.fragment_plank_timer.*
@@ -18,6 +20,9 @@ import java.util.concurrent.TimeUnit
 
 class PlankTimerFragment : Fragment() {
 
+    val TIME_KEY = "time"
+    lateinit var chronometer:Chronometer
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,7 +33,15 @@ class PlankTimerFragment : Fragment() {
 
         val application = requireNotNull(this.activity).application
 
-        val chronometer = binding.plankChronometer
+        chronometer = binding.plankChronometer
+
+        if (savedInstanceState != null){
+            val setupTime = savedInstanceState.getLong(TIME_KEY)
+            setupChronometer(chronometer, SystemClock.elapsedRealtime() - setupTime)
+            binding.startButton.visibility = View.INVISIBLE
+            binding.stopButton.visibility = View.VISIBLE
+            binding.resetButton.visibility = View.VISIBLE
+        }
 
         val dao = PlankDatabase.getInstance(application).plankDao
         val viewModelFactory = PlankTimerViewModelFactory(dao)
@@ -37,9 +50,8 @@ class PlankTimerFragment : Fragment() {
         binding.plankTimerViewModel = plankTimerViewModel
 
         binding.startButton.setOnClickListener { view:View ->
-            chronometer.setBase(SystemClock.elapsedRealtime())
-            chronometer.start()
-            view.visibility = View.INVISIBLE
+            setupChronometer(chronometer, SystemClock.elapsedRealtime())
+            startButton.visibility = View.INVISIBLE
             stopButton.visibility = View.VISIBLE
             resetButton.visibility = View.VISIBLE
         }
@@ -55,7 +67,7 @@ class PlankTimerFragment : Fragment() {
             chronometer.setBase(SystemClock.elapsedRealtime())
             chronometer.stop()
             view.visibility = View.INVISIBLE
-            stopButton.visibility = View.VISIBLE
+            stopButton.visibility = View.INVISIBLE
             startButton.visibility = View.VISIBLE
 
         }
@@ -70,6 +82,16 @@ class PlankTimerFragment : Fragment() {
         val seconds = TimeUnit.MILLISECONDS.toSeconds(millisTime)
         return "$minutes min $seconds s"
 
+    }
+
+    private fun setupChronometer(chronometer:Chronometer, time: Long){
+        chronometer.setBase(time)
+        chronometer.start()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putLong(TIME_KEY, SystemClock.elapsedRealtime()  - chronometer.getBase())
+        super.onSaveInstanceState(outState)
     }
 
 }

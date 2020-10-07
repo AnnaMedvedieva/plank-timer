@@ -17,7 +17,7 @@ interface PlankDao {
     @Query("SELECT * from plank_time_table WHERE plankId = :id")
     fun getPlank(id: Long): LiveData<Plank>
 
-    @Query("SELECT * from plank_time_table ORDER BY date DESC")
+    @Query("SELECT * from plank_time_table ORDER BY plankId DESC")
     fun getAllPlanks(): LiveData<List<Plank>>
 
     @Query("DELETE FROM plank_time_table WHERE plankId = :id")
