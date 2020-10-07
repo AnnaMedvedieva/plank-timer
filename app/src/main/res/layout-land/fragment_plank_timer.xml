@@ -24,61 +24,49 @@
             android:layout_marginTop="24dp"
             android:textColor="@color/colorPrimary"
             android:textSize="56sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plankTypeImage" />
+            app:layout_constraintEnd_toEndOf="@+id/startButton"
+            app:layout_constraintStart_toStartOf="@+id/startButton"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/resetButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="8dp"
             android:backgroundTint="@color/colorPrimaryLight"
             android:text="@string/resetButton"
             android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/startButton"
             app:layout_constraintTop_toBottomOf="@+id/startButton" />
 
         <Button
             android:id="@+id/startButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="8dp"
             android:backgroundTint="@color/colorPrimaryLight"
             android:text="@string/startButton"
+            app:layout_constraintBottom_toBottomOf="@+id/plankTypeImage"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/plankTypeImage"
             app:layout_constraintTop_toBottomOf="@+id/plankChronometer" />
 
         <Button
             android:id="@+id/stopButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="8dp"
             android:backgroundTint="@color/colorPrimaryLight"
             android:text="@string/stopButton"
             android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/resetButton" />
+            app:layout_constraintStart_toEndOf="@+id/startButton"
+            app:layout_constraintTop_toBottomOf="@+id/startButton" />
 
         <ImageView
             android:id="@+id/plankTypeImage"
             android:layout_width="300dp"
             android:layout_height="100dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
             android:scaleType="fitCenter"
             app:image="@{plankTimerViewModel.plankType}"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/plantTypeSpinner" />
 
@@ -86,14 +74,12 @@
             android:id="@+id/plantTypeSpinner"
             android:layout_width="180dp"
             android:layout_height="36dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="8dp"
             android:backgroundTint="@color/colorPrimaryLight"
             android:backgroundTintMode="screen"
             android:entries="@array/types_array"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textAlignment="viewStart"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:setOnItemSelectedListener="@{plankTimerViewModel.onSelectItem}" />
@@ -102,14 +88,12 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
             android:text="@string/instructions"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

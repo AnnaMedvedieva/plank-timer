@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingComponent
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -13,7 +12,6 @@ import com.google.android.material.snackbar.Snackbar
 import org.company.annamedvedieva.myplanktimer.R
 import org.company.annamedvedieva.myplanktimer.data.PlankDatabase
 import org.company.annamedvedieva.myplanktimer.databinding.FragmentResultsBinding
-import org.company.annamedvedieva.myplanktimer.planktimer.PlankTimerViewModel
 
 class ResultsFragment : Fragment() {
 
@@ -54,7 +52,7 @@ class ResultsFragment : Fragment() {
                     requireActivity().findViewById(android.R.id.content),
                     getString(R.string.snackbar_delete),
                     Snackbar.LENGTH_LONG
-                ).setAction(getString(R.string.Undo), View.OnClickListener {
+                ).setAction(getString(R.string.undo), View.OnClickListener {
                     resultsViewModel.onUndoClicked()
                 }).
                 show()
