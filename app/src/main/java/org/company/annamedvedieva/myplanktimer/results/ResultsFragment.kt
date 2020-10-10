@@ -15,7 +15,6 @@ import org.company.annamedvedieva.myplanktimer.databinding.FragmentResultsBindin
 
 class ResultsFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,7 +31,6 @@ class ResultsFragment : Fragment() {
         val resultsViewModel = ViewModelProvider(this, factory).get(ResultsViewModel::class.java)
 
         binding.resultsViewModel = resultsViewModel
-
 
         val adapter = PlanksListAdapter(PlankListener { plankId ->
             resultsViewModel.onDeleteClicked(plankId)

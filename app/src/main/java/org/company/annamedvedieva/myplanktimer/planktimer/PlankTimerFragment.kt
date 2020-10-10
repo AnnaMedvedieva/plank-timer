@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Chronometer
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.fragment_plank_timer.*
@@ -79,7 +78,7 @@ class PlankTimerFragment : Fragment() {
 
     private fun convertMillis(millisTime: Long): String {
         val minutes = TimeUnit.MILLISECONDS.toMinutes(millisTime)
-        val seconds = TimeUnit.MILLISECONDS.toSeconds(millisTime)
+        val seconds = (millisTime/1000) % 60
         return "$minutes min $seconds s"
 
     }

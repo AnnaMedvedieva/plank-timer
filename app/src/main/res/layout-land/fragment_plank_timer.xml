@@ -24,6 +24,7 @@
             android:layout_marginTop="24dp"
             android:textColor="@color/colorPrimary"
             android:textSize="56sp"
+            android:keepScreenOn="true"
             app:layout_constraintEnd_toEndOf="@+id/startButton"
             app:layout_constraintStart_toStartOf="@+id/startButton"
             app:layout_constraintTop_toTopOf="parent" />
