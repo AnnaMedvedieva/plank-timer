@@ -1,7 +1,7 @@
 # Plank Timer app
 
 App for tracking time in plank. 
-User can choose one of 3 plank types: low plank, high plank and side plank.
+User can choose one of 3 plank types: low plank, high plank or side plank.
 
 ## Screenshots
 ![Main screen](https://github.com/AnnaMedvedieva/plank-timer/blob/master/screenshots/screenshot_main_screen.png)
